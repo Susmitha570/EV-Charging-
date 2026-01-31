@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EV Route Recommendation Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <h1>⚡ EV Route Recommendation Dashboard</h1>
+    <p class="sub">OSRM Exact Distance + Stations + Map (No Popups)</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Inputs</h2>
+      <div class="grid">
+        <div>
+          <label>Source City</label>
+          <input id="source" placeholder="e.g., Vijayawada"/>
+        </div>
+
+        <div>
+          <label>Destination City</label>
+          <input id="destination" placeholder="e.g., Guntur"/>
+        </div>
+
+        <div>
+          <label>Vehicle Type</label>
+          <select id="vehicle">
+            <option value="2W">2W</option>
+            <option value="3W">3W</option>
+            <option value="4W" selected>4W</option>
+            <option value="Bus">Bus</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="btn">Recommend</button>
+          <div id="msg" class="msg"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <div class="kpi">
+        <div class="kpi-title">Distance (OSRM)</div>
+        <div id="kpiDistance" class="kpi-value">--</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-title">Duration</div>
+        <div id="kpiDuration" class="kpi-value">--</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-title">Interval Rule</div>
+        <div id="kpiInterval" class="kpi-value">--</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-title">Stations Required</div>
+        <div id="kpiReq" class="kpi-value">--</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-title">Available (Dataset)</div>
+        <div id="kpiAvail" class="kpi-value">--</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-title">Extra Needed</div>
+        <div id="kpiExtra" class="kpi-value">--</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Other Routes (Top 3)</h2>
+      <div id="otherRoutes" class="routes"></div>
+    </section>
+
+    <section class="card">
+      <h2>Route Map</h2>
+      <div class="mapActions">
+        <a id="openMap" href="#" target="_blank" class="linkbtn">Open Map in New Tab</a>
+      </div>
+      <iframe id="mapFrame" class="mapFrame" title="EV Route Map"></iframe>
+    </section>
+
+    <section class="card" id="predCard" style="display:none;">
+      <h2>ML Predictions (Optional)</h2>
+      <div id="predictions" class="predBox"></div>
+      <p class="hint">Note: Predictions show only if backend finds saved models in <b>backend/outputs/models</b>.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made for EV Project • OSRM + Nominatim + Folium</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

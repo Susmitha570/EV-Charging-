@@ -1,0 +1,7 @@
+EV PROJECT – STATISTICAL INSIGHTS
+================================
+
+Average Charging Duration : 4.70 hrs
+Average Distance          : 304.59 km
+Most Used Vehicle Type    : 2W
+Average EV Stations/Route : 25.03

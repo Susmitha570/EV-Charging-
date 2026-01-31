@@ -1,0 +1,19 @@
+,0
+source_city,0
+destination_city,0
+charging_capacity_kW,0
+distance_km,0
+num_ev_stations_route,0
+charger_power_kW,0
+charging_capacity_kWh,0
+charging_duration_hours,0
+charging_demand,0
+station_density,0
+high_load_route,0
+vehicle_type_3W,0
+vehicle_type_4W,0
+vehicle_type_Bus,0
+charger_type_Slow,0
+charger_type_Ultra-Fast,0
+source_state_Tamil Nadu,0
+destination_state_Tamil Nadu,0
